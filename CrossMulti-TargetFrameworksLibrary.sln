@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29324.140
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared", "Shared\Shared.shproj", "{D7117D99-242F-40DD-947E-964FC9F4EB22}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{C28E2781-C791-4099-9204-AABC7F2EA309}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossMulti-TargetFrameworksLibrary", "CrossMulti-TargetFrameworksLibrary\CrossMulti-TargetFrameworksLibrary.csproj", "{D4C28E05-FACD-48C0-A772-50F2827DF5DB}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Shared\Shared.projitems*{d7117d99-242f-40dd-947e-964fc9f4eb22}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C28E2781-C791-4099-9204-AABC7F2EA309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C28E2781-C791-4099-9204-AABC7F2EA309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C28E2781-C791-4099-9204-AABC7F2EA309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C28E2781-C791-4099-9204-AABC7F2EA309}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C28E05-FACD-48C0-A772-50F2827DF5DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C28E05-FACD-48C0-A772-50F2827DF5DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C28E05-FACD-48C0-A772-50F2827DF5DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C28E05-FACD-48C0-A772-50F2827DF5DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CAC92375-EE4C-47B9-8DBF-8B7A3B59B1D6}
+	EndGlobalSection
+EndGlobal
