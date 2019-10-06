@@ -10,6 +10,19 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)EnumerableHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\FixedTokenBucket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\IThrottleStrategy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\ITrafficController.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\LeakyTokenBucket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\RollingWindowThrottler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\StepDownTokenBucket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\StepUpLeakyTokenBucket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\SystemTime.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\Throttler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\TokenBucket.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\TrafficControlStrategy.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\TrafficControlStrategyType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RateLimiters\TrafficControlTimespan.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SharedClass.cs" />
   </ItemGroup>
 </Project>
