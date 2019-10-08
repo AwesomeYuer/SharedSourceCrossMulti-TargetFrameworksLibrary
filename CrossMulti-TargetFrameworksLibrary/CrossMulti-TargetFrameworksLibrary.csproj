@@ -9,21 +9,21 @@
 
   <Import Project="..\Shared\Shared.projitems" Label="Shared" />
 
-
-
   <ItemGroup Condition="$(TargetFramework)=='netcoreapp2.2'">
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.7" />
     <PackageReference Include="Microsoft.NETCore.App" Version="2.2.7" />
   </ItemGroup>
 
-
+  <PropertyGroup Condition="'$(TargetFramework)'=='net48'">
+    <AssemblyName>CrossMulti-TargetFrameworksLibrary.Framework.4.x</AssemblyName>
+  </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='netcoreapp2.2'">
-    <AssemblyName>MsSqlCodeDiffVersioning.2.x</AssemblyName>
+    <AssemblyName>CrossMulti-TargetFrameworksLibrary.Core.2.x</AssemblyName>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFramework)'=='netcoreapp3.0'">
-    <AssemblyName>MsSqlCodeDiffVersioning.3.x</AssemblyName>
+    <AssemblyName>CrossMulti-TargetFrameworksLibrary.Core.3.x</AssemblyName>
   </PropertyGroup>
 
   
