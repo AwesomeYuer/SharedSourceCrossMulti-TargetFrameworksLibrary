@@ -7,7 +7,7 @@
         public void Test()
         {
 #if NETFRAMEWORK
-#if NET48
+#if NET4X
             Console.WriteLine($"Target framework: {RuntimeInformation.FrameworkDescription}");
 #endif
 #elif NETCOREAPP

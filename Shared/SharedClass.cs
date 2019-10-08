@@ -12,9 +12,9 @@
                         Console.WriteLine($"Target framework: {RuntimeInformation.FrameworkDescription}");
             #endif
             #elif NETCOREAPP
-            #if NETCOREAPP2_2
+            #if NETCOREAPP2_X
                         Console.WriteLine($"Target framework: {RuntimeInformation.FrameworkDescription}");
-            #elif NETCOREAPP3_0
+            #elif NETCOREAPP3_X
                         Console.WriteLine($"Target framework: {RuntimeInformation.FrameworkDescription}");
             #endif
             #endif
