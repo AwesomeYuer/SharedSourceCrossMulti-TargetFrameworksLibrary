@@ -5,6 +5,11 @@
     <TargetFrameworks>netcoreapp2.2;netcoreapp3.0;net48</TargetFrameworks>
   </PropertyGroup>
 
+  <ItemGroup Condition="$(TargetFramework)=='netcoreapp2.2'">
+    <!--<PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.7" />-->
+    <PackageReference Include="Microsoft.NETCore.App" Version="2.2.7" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\CrossMulti-TargetFrameworksLibrary\CrossMulti-TargetFrameworksLibrary.csproj" />
   </ItemGroup>

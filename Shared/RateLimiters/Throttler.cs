@@ -10,7 +10,11 @@ namespace Microshaoft
 
         public Throttler(IThrottleStrategy strategy)
         {
-            if (strategy == null) throw new ArgumentNullException("strategy");
+            if (strategy == null)
+            {
+                throw new ArgumentNullException("strategy");
+            }
+
             this.strategy = strategy;
         }
 
