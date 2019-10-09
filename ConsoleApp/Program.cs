@@ -6,6 +6,8 @@ namespace ConsoleApp
     using System.Linq;
     using System.Runtime.InteropServices;
     using Microshaoft;
+    using System.Reflection;
+    //using Microsoft.AspNetCore.Mvc.ModelBinding;
 
     class Program
     {
@@ -61,7 +63,100 @@ namespace ConsoleApp
             Console.WriteLine($"Target framework: {RuntimeInformation.FrameworkDescription}");
 #endif
 #endif
+
+            AppDomain currentDomain = AppDomain.CurrentDomain;
+
+            // This call will fail to create an instance of MyType since the
+            // assembly resolver is not set
+            InstantiateMyTypeFail(currentDomain);
+
+            //currentDomain.AssemblyResolve += new ResolveEventHandler(MyResolveEventHandler);
+
+            currentDomain.AssemblyResolve += (sender, resolveEventArgs) =>
+            {
+                Console.WriteLine("Resolving...");
+                return typeof(MyType).Assembly;
+            };
+
+            // This call will succeed in creating an instance of MyType since the
+            // assembly resolver is now set.
+            InstantiateMyTypeFail(currentDomain);
+
+            // This call will succeed in creating an instance of MyType since the
+            // assembly name is valid.
+            InstantiateMyTypeSucceed(currentDomain);
+
+
             Console.ReadLine();
         }
+
+ 
+
+        private static void InstantiateMyTypeFail(AppDomain domain)
+        {
+            // Calling InstantiateMyType will always fail since the assembly info
+            // given to CreateInstance is invalid.
+            try
+            {
+                // You must supply a valid fully qualified assembly name here.
+#if NETCOREAPP2_X
+                throw new NotSupportedException();
+#else
+                domain
+                    .CreateInstance
+                        (
+                            "Assembly text name, Version, Culture, PublicKeyToken"
+                            , "MyType"
+                        );
+#endif
+
+
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine();
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        private static void InstantiateMyTypeSucceed(AppDomain domain)
+        {
+            try
+            {
+                Assembly assembly = Assembly.GetCallingAssembly();
+                string asmname = assembly.FullName;
+#if NETCOREAPP2_X
+                throw new NotSupportedException();
+#else
+                domain.CreateInstance(asmname, "MyType");
+#endif
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine();
+                Console.WriteLine(e.Message);
+            }
+        }
+
+        //private static Assembly MyResolveEventHandler(object sender, ResolveEventArgs args)
+        //{
+        //    Console.WriteLine("Resolving...");
+        //    return typeof(MyType).Assembly;
+        //}
     }
+
+
+    public class MyType
+    {
+        public MyType()
+        {
+            Console.WriteLine();
+            Console.WriteLine("MyType instantiated!");
+        }
+    }
+
+
+
 }

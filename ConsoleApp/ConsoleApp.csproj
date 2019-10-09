@@ -10,6 +10,26 @@
     <PackageReference Include="Microsoft.NETCore.App" Version="2.2.7" />
   </ItemGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)|$(TargetFramework)'=='Debug|AnyCPU|net48'">
+    <DefineConstants>DEBUG;TRACE;NET;NET4X</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)|$(TargetFramework)'=='Release|AnyCPU|net48'">
+    <DefineConstants>NET;NET4X</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)|$(TargetFramework)'=='Debug|AnyCPU|netcoreapp2.2'">
+    <DefineConstants>DEBUG;TRACE;NETCOREAPP;NETCOREAPP2_X</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)|$(TargetFramework)'=='Release|AnyCPU|netcoreapp2.2'">
+    <DefineConstants>NETCOREAPP;NETCOREAPP2_X</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)|$(TargetFramework)'=='Debug|AnyCPU|netcoreapp3.0'">
+    <DefineConstants>DEBUG;TRACE;NETCOREAPP;NETCOREAPP3_X</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)|$(TargetFramework)'=='Release|AnyCPU|netcoreapp3.0'">
+    <DefineConstants>NETCOREAPP;NETCOREAPP3_X</DefineConstants>
+  </PropertyGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\CrossMulti-TargetFrameworksLibrary\CrossMulti-TargetFrameworksLibrary.csproj" />
   </ItemGroup>
